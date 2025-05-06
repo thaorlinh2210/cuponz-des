@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CuponZ - Contact Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #333;
+        }
+
+        .contact-wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            background-color: #9b34ef;
+            color: #fff;
+            flex: 1 1 280px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .form-container {
+            flex: 2 1 380px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-container label {
+            margin: 8px 0 5px;
+            font-weight: bold;
+        }
+
+        .form-container .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .form-container button {
+            background: #fcb900;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: fit-content;
+            align-self: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .form-container button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Say something to start a live chat!</p>
+            <p><strong>📞</strong> +61 430 770 907</p>
+            <p><strong>📧</strong> sadimdshaik@gmail.com</p>
+            <p><strong>📍</strong> 132 Dartmouth Street Boston,<br> Massachusetts 02156, United States</p>
+        </div>
+
+        <form class="form-container">
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <input type="text" placeholder="First Name" style="flex: 1;">
+                <input type="text" placeholder="Last Name" style="flex: 1;">
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <input type="email" placeholder="Email" style="flex: 1;">
+                <input type="tel" placeholder="Phone Number" style="flex: 1;">
+            </div>
+
+            <label>Select Subject</label>
+            <div class="radio-group">
+                <label><input type="radio" name="subject" checked> General Inquiry</label>
+                <label><input type="radio" name="subject"> Technical Support</label>
+                <label><input type="radio" name="subject"> Billing</label>
+            </div>
+
+            <textarea rows="5" placeholder="Write your message ..."></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
