@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CuponZ - Mobile Coupons & Deals</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        header h1 {
+            color: #2d2e82;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #2d2e82;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #2d2e82;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 20px;
+            z-index: 100;
+        }
+
+        .mobile-nav a {
+            margin: 8px 0;
+            text-decoration: none;
+            color: #444;
+        }
+
+        .hero {
+            background: #e7ebfd;
+            text-align: center;
+            padding: 40px 15px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #2d2e82;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search-bar input {
+            width: 90%;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .featured-stores {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .featured-stores h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2d2e82;
+        }
+
+        .store-logos img {
+            height: 30px;
+            margin: 10px;
+        }
+
+        .coupon-list {
+            background: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .coupon {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .coupon:last-child {
+            border-bottom: none;
+        }
+
+        .coupon h4 {
+            font-size: 16px;
+            margin: 0 0 5px;
+            color: #2d2e82;
+        }
+
+        .coupon p {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0 10px;
+        }
+
+        .coupon button {
+            background: #fcb900;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .coupon button:hover {
+            background: #e0a800;
+        }
+
+        footer {
+            background: #2d2e82;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CuponZ</h1>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Coupons</a>
+            <a href="#">Brands</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="hamburger" onclick="toggleMobileNav()">☰</button>
+        <nav class="mobile-nav" id="mobileMenu">
+            <a href="#">Home</a>
+            <a href="#">Coupons</a>
+            <a href="#">Brands</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Find the Best Mobile Deals</h2>
+        <p>Save instantly from your phone.</p>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search brands, deals, or codes...">
+    </div>
+
+    <section class="featured-stores">
+        <h3>Featured Stores</h3>
+        <div class="store-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/HP_logo_630x630.png" alt="HP">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Gymshark_Logo.png" alt="Gymshark">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Emirates_logo.png" alt="Emirates">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Norton-logo.svg" alt="Norton">
+        </div>
+    </section>
+
+    <section class="coupon-list">
+        <div class="coupon">
+            <h4>10% Off Squarespace</h4>
+            <p>Use code at checkout for website plans.</p>
+            <button>Get Code</button>
+        </div>
+        <div class="coupon">
+            <h4>45% Off HP Laptops</h4>
+            <p>Early EOFY sale for desktops & accessories.</p>
+            <button>Get Offer</button>
+        </div>
+        <div class="coupon">
+            <h4>15% Off Samsung TVs</h4>
+            <p>With purchase of select soundbars.</p>
+            <button>View Deals</button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 CuponZ. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleMobileNav() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CuponZ - Shop List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #f4f2fc;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #2d2e82;
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #2d2e82;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #2d2e82;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px 20px;
+            z-index: 100;
+        }
+
+        .mobile-nav a {
+            margin: 8px 0;
+            text-decoration: none;
+            color: #444;
+        }
+
+        /* Search & Layout */
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search-container input {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #fcb900;
+            border-radius: 8px;
+        }
+
+        .items-count {
+            text-align: center;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .shop-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .shop-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .shop-card h3 {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .shop-card button {
+            background: #2d8cff;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #2d2e82;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .shop-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            header {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CuponZ</h1>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Coupons</a>
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="hamburger" onclick="toggleMobileNav()">☰</button>
+        <nav class="mobile-nav" id="mobileMenu">
+            <a href="#">Home</a>
+            <a href="#">Coupons</a>
+            <a href="#">Shop</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search shops...">
+    </div>
+
+    <div class="items-count">31 Items found</div>
+
+    <div class="shop-grid">
+        <div class="shop-card">
+            <img src="https://via.placeholder.com/80?text=🏪" alt="Shop">
+            <h3>Shop</h3>
+            <button>View</button>
+        </div>
+        <div class="shop-card">
+            <img src="https://via.placeholder.com/80?text=🏪" alt="Shop">
+            <h3>Shop 2</h3>
+            <button>View</button>
+        </div>
+        <div class="shop-card">
+            <img src="https://via.placeholder.com/80?text=🏪" alt="Shop">
+            <h3>Morgan Brown</h3>
+            <button>View</button>
+        </div>
+        <div class="shop-card">
+            <img src="https://via.placeholder.com/80?text=🏪" alt="Shop">
+            <h3>Cameron Smith</h3>
+            <button>View</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 CuponZ. All rights reserved.
+    </footer>
+
+    <script>
+        function toggleMobileNav() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
+</body>
+
+</html>
